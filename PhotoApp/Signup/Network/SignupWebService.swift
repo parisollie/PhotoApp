@@ -1,5 +1,6 @@
 import Foundation
 
+//Paso 1.21
 class SignupWebService: SignupWebServiceProtocol {
     
     private var urlSession: URLSession
@@ -10,6 +11,7 @@ class SignupWebService: SignupWebServiceProtocol {
         self.urlSession = urlSession
     }
     
+    //paso 1.24
     func signup(withForm formModel: SignupFormRequestModel, completionHandler: @escaping (SignupResponseModel?, SignupError?) -> Void) {
         guard let url = URL(string: urlString) else {
             completionHandler(nil, SignupError.invalidRequestURLString)

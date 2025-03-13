@@ -1,8 +1,10 @@
 import XCTest
 @testable import PhotoApp
 
+//Paso 1.18, creamos el test
 class SignupWebServiceTests: XCTestCase {
     
+    //paso 1.20
     var sut:SignupWebService!
     var signFormRequestModel:SignupFormRequestModel!
     
@@ -11,8 +13,10 @@ class SignupWebServiceTests: XCTestCase {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession(configuration: config)
+        //paso 1.23
         sut = SignupWebService(urlString: SignupConstants.signupURLString, urlSession: urlSession)
-        signFormRequestModel = SignupFormRequestModel(firstName: "Sergey", lastName: "Kargopolov", email: "test@test.com", password: "12345678")
+        //paso 1.25
+        signFormRequestModel = SignupFormRequestModel(firstName: "Harry", lastName: "Kargopolov", email: "test@test.com", password: "12345678")
         
     }
     
@@ -25,7 +29,7 @@ class SignupWebServiceTests: XCTestCase {
         
     }
     
-    
+    //Paso 1.19
     func testSignupWebService_WhenGivenSuccessfullResponse_ReturnsSuccess() {
         
         // Arrange
@@ -37,7 +41,7 @@ class SignupWebServiceTests: XCTestCase {
         // Act
         sut.signup(withForm: signFormRequestModel) { (signupResponseModel, error) in
             
-            // Assert
+            //Paso 1.28 Assert
             //"{\"status\":\"ok\"}"
             XCTAssertEqual(signupResponseModel?.status, "ok")
             expectation.fulfill()

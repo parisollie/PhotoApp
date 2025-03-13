@@ -1,5 +1,6 @@
 import Foundation
 
+//paso 1.27
 enum SignupError: LocalizedError, Equatable {
     
     case invalidResponseModel
