@@ -1,5 +1,6 @@
 import Foundation
 
+//Paso 1.11
 struct SignupConstants {
     static let firstNameMinLength = 2
     static let firstNameMaxLength = 10

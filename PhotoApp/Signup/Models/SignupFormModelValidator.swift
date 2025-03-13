@@ -1,11 +1,13 @@
 import Foundation
 
-
+//Paso 1.4
 class SignupFormModelValidator: SignupModelValidatorProtocol {
     
+    //Paso 1.5
     func isFirstNameValid(firstName: String) -> Bool {
         var returnValue = true
         
+        //Paso 1.12, usamos el archivo de constantes
         if firstName.count < SignupConstants.firstNameMinLength || firstName.count > SignupConstants.firstNameMaxLength {
             returnValue = false
         }
@@ -23,6 +25,11 @@ class SignupFormModelValidator: SignupModelValidatorProtocol {
             return returnValue
     }*/
 
+    //Paso 1.15
+    func doPasswordsMatch(password: String, repeatPassword: String) -> Bool {
+        //Paso 1.17
+        return password == repeatPassword
+    }
     
     
     
@@ -52,8 +59,6 @@ class SignupFormModelValidator: SignupModelValidatorProtocol {
         return returnValue
     }
     
-    func doPasswordsMatch(password: String, repeatPassword: String) -> Bool {
-        return password == repeatPassword
-    }
+    
     
 }
